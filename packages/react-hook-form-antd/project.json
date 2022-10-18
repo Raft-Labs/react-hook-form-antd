@@ -1,0 +1,61 @@
+{
+  "name": "react-hook-form-antd",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/react-hook-form-antd/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/react-hook-form-antd",
+        "main": "packages/react-hook-form-antd/src/index.ts",
+        "tsConfig": "packages/react-hook-form-antd/tsconfig.lib.json",
+        "assets": [
+          "packages/react-hook-form-antd/*.md",
+          {
+            "input": "./packages/react-hook-form-antd/src",
+            "glob": "**/!(*.ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./packages/react-hook-form-antd/src",
+            "glob": "**/*.d.ts",
+            "output": "./src"
+          },
+          {
+            "input": "./packages/react-hook-form-antd",
+            "glob": "generators.json",
+            "output": "."
+          },
+          {
+            "input": "./packages/react-hook-form-antd",
+            "glob": "executors.json",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/react-hook-form-antd/**/*.ts",
+          "packages/react-hook-form-antd/generators.json",
+          "packages/react-hook-form-antd/executors.json",
+          "packages/react-hook-form-antd/package.json"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "packages/react-hook-form-antd/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
