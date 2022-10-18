@@ -1,0 +1,13 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+BRANCH=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
+PROTECTED_BRANCHES="^(development|main|staging)"
+
+if [[ "$BRANCH" =~ $PROTECTED_BRANCHES ]]
+then
+  echo -e "\n🚫 Cannot push to remote $BRANCH branch, please create your own branch and use PR.\n" && exit 1
+fi
+
+npm run style
+npx nx run-many --target=lint --all=true

@@ -10,6 +10,7 @@
           "error",
           {
             "enforceBuildableLibDependency": true,
+            "allowCircularSelfDependency": true,
             "allow": [],
             "depConstraints": [
               {
@@ -23,8 +24,19 @@
     },
     {
       "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nrwl/nx/typescript"],
-      "rules": {}
+      "extends": ["plugin:@nrwl/nx/typescript", "plugin:prettier/recommended"],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "warn",
+        "@typescript-eslint/ban-types": [
+          "error",
+          {
+            "extendDefaults": true,
+            "types": {
+              "{}": false
+            }
+          }
+        ]
+      }
     },
     {
       "files": ["*.js", "*.jsx"],

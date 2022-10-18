@@ -3,34 +3,23 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/react-hook-form-antd/src",
   "projectType": "library",
+  "tags": [],
   "targets": {
     "build": {
-      "executor": "@nrwl/js:tsc",
+      "executor": "@nrwl/web:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/react-hook-form-antd",
-        "main": "packages/react-hook-form-antd/src/index.ts",
         "tsConfig": "packages/react-hook-form-antd/tsconfig.lib.json",
+        "project": "packages/react-hook-form-antd/package.json",
+        "entryFile": "packages/react-hook-form-antd/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
         "assets": [
-          "packages/react-hook-form-antd/*.md",
           {
-            "input": "./packages/react-hook-form-antd/src",
-            "glob": "**/!(*.ts)",
-            "output": "./src"
-          },
-          {
-            "input": "./packages/react-hook-form-antd/src",
-            "glob": "**/*.d.ts",
-            "output": "./src"
-          },
-          {
-            "input": "./packages/react-hook-form-antd",
-            "glob": "generators.json",
-            "output": "."
-          },
-          {
-            "input": "./packages/react-hook-form-antd",
-            "glob": "executors.json",
+            "glob": "packages/react-hook-form-antd/README.md",
+            "input": ".",
             "output": "."
           }
         ]
@@ -41,10 +30,7 @@
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
-          "packages/react-hook-form-antd/**/*.ts",
-          "packages/react-hook-form-antd/generators.json",
-          "packages/react-hook-form-antd/executors.json",
-          "packages/react-hook-form-antd/package.json"
+          "packages/react-hook-form-antd/**/*.{ts,tsx,js,jsx}"
         ]
       }
     },
@@ -56,6 +42,5 @@
         "passWithNoTests": true
       }
     }
-  },
-  "tags": []
+  }
 }

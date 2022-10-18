@@ -1,7 +1,4 @@
 {
-  "name": "@react-hook-form-antd/react-hook-form-antd",
-  "version": "0.0.1",
-  "main": "src/index.js",
-  "generators": "./generators.json",
-  "executors": "./executors.json"
+  "name": "@raftlabs/react-hook-form-antd",
+  "version": "0.0.1"
 }

@@ -1,0 +1,7 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npx nx build react-hook-form-antd
+if [[ $? -ne 0 ]] ; then
+   echo -e "\n🚫 Build Failed. \n" && exit 1
+fi

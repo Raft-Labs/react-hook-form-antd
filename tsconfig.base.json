@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@react-hook-form-antd/react-hook-form-antd": [
+      "@raftlabs/react-hook-form-antd": [
         "packages/react-hook-form-antd/src/index.ts"
       ]
     }
