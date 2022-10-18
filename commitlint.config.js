@@ -4,6 +4,6 @@ module.exports = {
     'header-max-length': [0, 'always', 100],
     'scope-case': [2, 'always', 'kebab-case'],
     'scope-empty': [2, 'never'],
-    'scope-enum': [2, 'always', ['package', 'test', 'ci']],
+    'scope-enum': [2, 'always', ['app', 'package', 'test', 'ci']],
   },
 };
