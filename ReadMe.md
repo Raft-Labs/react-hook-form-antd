@@ -6,7 +6,11 @@ A wrapper of Ant Design Form Components with React Hook Form
 
 ```sh
 npm i @raftlabs/react-hook-form-antd
+```
+
 OR
+
+```sh
 yarn add @raftlabs/react-hook-form-antd
 ```
 
