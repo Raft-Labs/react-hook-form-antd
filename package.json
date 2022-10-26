@@ -13,17 +13,17 @@
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
-    "@nrwl/cli": "15.0.0",
-    "@nrwl/cypress": "15.0.0",
-    "@nrwl/devkit": "15.0.0",
-    "@nrwl/eslint-plugin-nx": "15.0.0",
-    "@nrwl/jest": "15.0.0",
-    "@nrwl/js": "15.0.0",
-    "@nrwl/linter": "15.0.0",
-    "@nrwl/nx-plugin": "^15.0.0",
-    "@nrwl/react": "15.0.0",
-    "@nrwl/web": "15.0.0",
-    "@nrwl/workspace": "15.0.0",
+    "@nrwl/cli": "15.0.3",
+    "@nrwl/cypress": "15.0.3",
+    "@nrwl/devkit": "15.0.3",
+    "@nrwl/eslint-plugin-nx": "15.0.3",
+    "@nrwl/jest": "15.0.3",
+    "@nrwl/js": "15.0.3",
+    "@nrwl/linter": "15.0.3",
+    "@nrwl/nx-plugin": "15.0.3",
+    "@nrwl/react": "15.0.3",
+    "@nrwl/web": "15.0.3",
+    "@nrwl/workspace": "15.0.3",
     "@swc-node/register": "^1.4.2",
     "@swc/cli": "~0.1.55",
     "@swc/core": "^1.2.173",
@@ -52,7 +52,7 @@
     "jest": "28.1.1",
     "jest-environment-jsdom": "28.1.1",
     "jsonc-eslint-parser": "^2.1.0",
-    "nx": "15.0.0",
+    "nx": "15.0.3",
     "prettier": "^2.6.2",
     "react-test-renderer": "18.2.0",
     "semver": "^7.3.8",
@@ -94,3 +94,4 @@
     }
   }
 }
+
