@@ -64,6 +64,9 @@
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@swc/helpers": "~0.4.11",
+    "@udecode/plate": "^18.5.0",
+    "@udecode/plate-core": "^18.2.0",
+    "@udecode/plate-serializer-md": "^18.2.0",
     "antd": "^4.23.6",
     "antd-img-crop": "^4.2.8",
     "core-js": "^3.6.5",
@@ -76,6 +79,7 @@
     "react-draft-wysiwyg": "^1.15.0",
     "react-hook-form": "^7.37.0",
     "regenerator-runtime": "0.13.7",
+    "remark-slate": "^1.8.6",
     "timezones-list": "^3.0.1",
     "tslib": "^2.3.0"
   },
@@ -94,4 +98,3 @@
     }
   }
 }
-

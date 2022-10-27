@@ -1,12 +1,51 @@
+import {
+  BoldOutlined,
+  ItalicOutlined,
+  UnderlineOutlined,
+} from '@ant-design/icons';
+import {
+  createAutoformatPlugin,
+  createBoldPlugin,
+  createDeserializeMdPlugin,
+  createHeadingPlugin,
+  createItalicPlugin,
+  createPlateUI,
+  createPlugins,
+  createUnderlinePlugin,
+  getPluginType,
+  HeadingToolbar,
+  MarkToolbarButton,
+  MARK_BOLD,
+  MARK_ITALIC,
+  MARK_UNDERLINE,
+  Plate,
+  PlateProps,
+  PlateProvider,
+  TEditableProps,
+  usePlateEditorRef,
+} from '@udecode/plate';
 import { Form, FormItemProps } from 'antd';
-import { convertToHTML } from 'draft-convert';
-import { ContentState, convertFromHTML, EditorState } from 'draft-js';
-import { useEffect, useState } from 'react';
-import { Editor, EditorProps } from 'react-draft-wysiwyg';
-import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import { Controller, UseFormReturn } from 'react-hook-form';
+import { BlockType, serialize } from 'remark-slate';
 
-interface IRichTextEditorFieldProps extends EditorProps {
+const plateUI = createPlateUI();
+
+const editableProps: TEditableProps = {
+  placeholder: 'Type...',
+};
+const platePlugins = createPlugins(
+  [
+    createHeadingPlugin(),
+    createBoldPlugin(),
+    createItalicPlugin(),
+    createUnderlinePlugin(),
+    createDeserializeMdPlugin(),
+    createAutoformatPlugin(),
+  ],
+  { components: plateUI }
+);
+
+interface IRichTextEditorFieldProps extends PlateProps {
   name: string;
   label: string;
   formHook: UseFormReturn;
@@ -25,34 +64,15 @@ export const RichTextEditorField = ({
   customHelp,
   ...props
 }: IRichTextEditorFieldProps) => {
-  const { control, getValues } = formHook;
-
+  const plateEditor = usePlateEditorRef();
+  const { control } = formHook;
   const FormItem = Form.Item;
 
-  const [editorState, setEditorState] = useState(EditorState.createEmpty());
-  const [init, setInit] = useState<boolean>(false);
-  const initialValue = getValues(name);
-
-  useEffect(() => {
-    if (initialValue?.length > 0 && !init) {
-      const blocksFromHTML = convertFromHTML(initialValue);
-
-      setEditorState(
-        EditorState.createWithContent(
-          ContentState.createFromBlockArray(
-            blocksFromHTML.contentBlocks,
-            blocksFromHTML.entityMap
-          )
-        )
-      );
-      setInit(true);
-    }
-  }, [initialValue, init]);
   return (
     <Controller
       name={name}
       render={({ field, fieldState }) => {
-        const { onChange, onBlur } = field;
+        const { onChange, value } = field;
         const { error } = fieldState;
         return (
           <FormItem
@@ -61,22 +81,32 @@ export const RichTextEditorField = ({
             validateStatus={error ? 'error' : 'validating'}
             help={error ? error?.message : customHelp || undefined}
           >
-            <Editor
+            <PlateProvider
               {...props}
-              editorState={editorState}
-              onEditorStateChange={(editorState) => {
-                setEditorState(editorState);
-                onChange(convertToHTML(editorState.getCurrentContent()));
-              }}
-              onBlur={onBlur}
-              toolbar={{
-                options: ['inline'],
-                inline: { options: ['bold', 'italic', 'underline'] },
-              }}
-              editorStyle={{ minHeight: 200 }}
-              wrapperClassName="border p-2"
-              placeholder={placeholder}
-            />
+              value={value}
+              plugins={platePlugins}
+              onChange={(val: BlockType[]) =>
+                onChange(
+                  val.map((node: BlockType) => serialize(node)).join('\n')
+                )
+              }
+            >
+              <HeadingToolbar>
+                <MarkToolbarButton
+                  icon={<BoldOutlined />}
+                  type={getPluginType(plateEditor, MARK_BOLD)}
+                />
+                <MarkToolbarButton
+                  icon={<ItalicOutlined />}
+                  type={getPluginType(plateEditor, MARK_ITALIC)}
+                />
+                <MarkToolbarButton
+                  icon={<UnderlineOutlined />}
+                  type={getPluginType(plateEditor, MARK_UNDERLINE)}
+                />
+              </HeadingToolbar>
+              <Plate editableProps={editableProps} />
+            </PlateProvider>
           </FormItem>
         );
       }}
