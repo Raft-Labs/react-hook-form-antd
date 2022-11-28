@@ -1,4 +1,8 @@
 {
   "eslint.validate": ["json"],
-  "cSpell.words": ["commitlint", "precommit"]
+  "cSpell.words": [
+    "commitlint",
+    "precommit",
+    "udecode"
+  ]
 }
