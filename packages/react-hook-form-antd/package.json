@@ -7,6 +7,7 @@
     "react",
     "form",
     "react-hook-form",
+    "react-hook-form-antd",
     "antd",
     "react-component"
   ],
@@ -16,11 +17,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Raft-Labs/raft-nx-plugins.git"
+    "url": "git+https://github.com/Raft-Labs/react-hook-form-antd.git"
   },
   "bugs": {
-    "url": "https://github.com/Raft-Labs/raft-nx-plugins/issues"
+    "url": "https://github.com/Raft-Labs/react-hook-form-antd/issues"
   },
-  "homepage": "https://github.com/Raft-Labs/raft-nx-plugins/tree/main/packages/react-hook-form-antd",
+  "homepage": "https://github.com/Raft-Labs/react-hook-form-antd",
   "description": "react-hook-form wrapper for antd form components."
 }
