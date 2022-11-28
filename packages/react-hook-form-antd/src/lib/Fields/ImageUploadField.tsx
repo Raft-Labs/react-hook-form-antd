@@ -1,9 +1,34 @@
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons';
 import { Form, FormItemProps, Image, message, Upload, UploadProps } from 'antd';
-import ImgCrop, { ImgCropProps } from 'antd-img-crop';
+import ImgCrop from 'antd-img-crop';
 import { RcFile } from 'antd/lib/upload';
 import { useState } from 'react';
 import { Controller, UseFormReturn } from 'react-hook-form';
+
+type ImgCropProps = {
+  aspect?: number;
+  shape?: 'rect' | 'round';
+  grid?: boolean;
+  quality?: number;
+  fillColor?: string;
+  zoom?: boolean;
+  rotate?: boolean;
+  minZoom?: number;
+  maxZoom?: number;
+  modalTitle?: string;
+  modalWidth?: number | string;
+  modalOk?: string;
+  modalCancel?: string;
+  modalMaskTransitionName?: string;
+  modalClassName?: string;
+  modalTransitionName?: string;
+  onModalOk?: (file: void | boolean | string | Blob | File) => void;
+  onModalCancel?: () => void;
+  beforeCrop?: (file: RcFile, fileList: RcFile[]) => boolean | Promise<boolean>;
+  onUploadFail?: (err: Error) => void;
+  // cropperProps?: Partial<CropperProps>;
+  children: JSX.Element;
+};
 
 interface ImageUploadFieldProps extends UploadProps {
   name: string;
@@ -46,7 +71,6 @@ export const ImageUploadField = ({
   ...props
 }: ImageUploadFieldProps) => {
   const { control } = formHook;
-
   const [dataUri, setDataUri] = useState(url);
   const [loading, setLoading] = useState<boolean>(false);
   return (
