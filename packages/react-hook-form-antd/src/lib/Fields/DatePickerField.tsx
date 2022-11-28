@@ -1,9 +1,9 @@
 import { DatePicker, Form, FormItemProps } from 'antd';
 import { PickerProps } from 'antd/lib/date-picker/generatePicker';
-import moment, { Moment } from 'moment';
+import dayjs, { Dayjs } from 'dayjs';
 import { Controller, UseFormReturn } from 'react-hook-form';
 
-type DatePickerFieldProps = PickerProps<Moment> & {
+type DatePickerFieldProps = PickerProps<Dayjs> & {
   name: string;
   label: string;
   customHelp?: string;
@@ -41,7 +41,7 @@ export const DatePickerField = ({
               onChange={(date) => {
                 onChange(date);
               }}
-              value={value ? moment(value).second(0) : undefined}
+              value={dayjs(value).second(0)}
             />
           </FormItem>
         );

@@ -3,11 +3,11 @@ import {
   PickerProps,
   RangePickerProps,
 } from 'antd/lib/date-picker/generatePicker';
-import moment, { Moment } from 'moment';
+import dayjs, { Dayjs } from 'dayjs';
 import { Controller, UseFormReturn } from 'react-hook-form';
 
-type RangePickerFieldProps = PickerProps<Moment> &
-  RangePickerProps<Moment> & {
+type RangePickerFieldProps = PickerProps<Dayjs> &
+  RangePickerProps<Dayjs> & {
     name: string;
     label: string;
     customHelp?: string;
@@ -49,7 +49,7 @@ export const RangePickerField = ({
                 };
                 onChange(dateRange);
               }}
-              value={[moment(start_date), moment(end_date)]}
+              value={[dayjs(start_date), dayjs(end_date)]}
             />
           </FormItem>
         );
