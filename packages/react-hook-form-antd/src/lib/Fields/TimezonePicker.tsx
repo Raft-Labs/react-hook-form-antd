@@ -1,6 +1,6 @@
 import { Form, FormItemProps, Select, SelectProps } from 'antd';
 import { Controller, UseFormReturn } from 'react-hook-form';
-import timezones from 'timezones-list';
+import { timezones } from '../../utils/timezones';
 
 interface TimezonePickerProps extends SelectProps {
   name: string;
@@ -9,6 +9,7 @@ interface TimezonePickerProps extends SelectProps {
   formHook: UseFormReturn;
   formItemProps?: FormItemProps;
 }
+
 const FormItem = Form.Item;
 const options = timezones.map((timezone) => {
   return {
