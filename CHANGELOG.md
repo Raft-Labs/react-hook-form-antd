@@ -1,5 +1,13 @@
 # Changelog
 
+<a name="1.0.1"></a>
+## 1.0.1 (2022-11-29)
+
+### Fixed
+
+- 🐛 fix(package): removed unwanted antd css import [[45a23cf](https://github.com/Raft-Labs/react-hook-form-antd/commit/45a23cff45808d96b408754f18b1c8c0a285e883)]
+
+
 <a name="1.0.0"></a>
 ## 1.0.0 (2022-11-28)
 
