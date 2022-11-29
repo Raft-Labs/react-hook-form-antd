@@ -1,4 +1,3 @@
-import 'antd/dist/antd.css';
 export * from './lib/Fields/AutoCompleteField';
 export * from './lib/Fields/CheckboxField';
 export * from './lib/Fields/CSVUploadField';
