@@ -1,5 +1,17 @@
 # Changelog
 
+<a name="1.0.2"></a>
+## 1.0.2 (2022-11-29)
+
+### Fixed
+
+- 🐛 fix(package): fixed issue with timezone picker type [[b2670cd](https://github.com/Raft-Labs/react-hook-form-antd/commit/b2670cdb06c735db3e1b0e243f48f75bf874c581)]
+
+### Miscellaneous
+
+-  Merge branch &#x27;main&#x27; of github.com:Raft-Labs/react-hook-form-antd into development [[278c001](https://github.com/Raft-Labs/react-hook-form-antd/commit/278c001739416d40fbd1bb7978839d86816ccda1)]
+
+
 <a name="1.0.1"></a>
 ## 1.0.1 (2022-11-29)
 
