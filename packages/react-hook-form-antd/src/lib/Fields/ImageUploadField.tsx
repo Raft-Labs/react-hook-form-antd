@@ -27,7 +27,7 @@ type ImgCropProps = {
   beforeCrop?: (file: RcFile, fileList: RcFile[]) => boolean | Promise<boolean>;
   onUploadFail?: (err: Error) => void;
   // cropperProps?: Partial<CropperProps>;
-  children: JSX.Element;
+  // children: JSX.Element;
 };
 
 interface ImageUploadFieldProps extends UploadProps {
