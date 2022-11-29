@@ -1,5 +1,13 @@
 # Changelog
 
+<a name="1.0.3"></a>
+## 1.0.3 (2022-11-29)
+
+### Fixed
+
+- 🐛 fix(package): fix issues with type in ImageUploader [[6ff8591](https://github.com/Raft-Labs/react-hook-form-antd/commit/6ff8591e3c91beb2375ce0e12300ef923e1b5653)]
+
+
 <a name="1.0.2"></a>
 ## 1.0.2 (2022-11-29)
 
