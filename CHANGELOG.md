@@ -1,5 +1,13 @@
 # Changelog
 
+<a name="1.0.7"></a>
+## 1.0.7 (2022-11-30)
+
+### Fixed
+
+- 🐛 fix(package): fixed useForm type issues [[035265f](https://github.com/Raft-Labs/react-hook-form-antd/commit/035265fc70bd1832cecfbbf5f7cdf646249ca587)]
+
+
 <a name="1.0.6"></a>
 ## 1.0.6 (2022-11-30)
 
