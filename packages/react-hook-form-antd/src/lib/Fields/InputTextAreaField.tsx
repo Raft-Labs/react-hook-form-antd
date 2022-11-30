@@ -1,10 +1,11 @@
 import { Form, FormItemProps, Input } from 'antd';
 import { TextAreaProps } from 'antd/lib/input';
+import { ReactNode } from 'react';
 import { Controller, UseFormReturn } from 'react-hook-form';
 
 interface InputTextAreaFieldProps extends TextAreaProps {
   name: string;
-  label?: string;
+  label?: ReactNode;
   customHelp?: string;
   formHook: UseFormReturn;
   formItemProps?: FormItemProps;

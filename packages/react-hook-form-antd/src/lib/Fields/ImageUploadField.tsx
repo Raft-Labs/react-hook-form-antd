@@ -10,13 +10,13 @@ import {
 } from 'antd';
 import ImgCrop from 'antd-img-crop';
 import { RcFile } from 'antd/lib/upload';
-import { useState } from 'react';
+import { ReactNode, useState } from 'react';
 import { Controller, UseFormReturn } from 'react-hook-form';
 import { ImgCropProps } from '../../types/image-upload';
 
 interface ImageUploadFieldProps extends UploadProps {
   name: string;
-  label: string;
+  label: ReactNode;
   customHelp?: string;
   formHook: UseFormReturn;
   formItemProps?: FormItemProps;

@@ -25,6 +25,7 @@ import {
   usePlateEditorRef,
 } from '@udecode/plate';
 import { Form, FormItemProps } from 'antd';
+import { ReactNode } from 'react';
 import { Controller, UseFormReturn } from 'react-hook-form';
 import { BlockType, serialize } from 'remark-slate';
 
@@ -47,7 +48,7 @@ const platePlugins = createPlugins(
 
 interface IRichTextEditorFieldProps extends PlateProps {
   name: string;
-  label: string;
+  label: ReactNode;
   formHook: UseFormReturn;
   formItemProps?: FormItemProps;
   placeholder?: string;

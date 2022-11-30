@@ -1,12 +1,12 @@
 import { InboxOutlined, LoadingOutlined } from '@ant-design/icons';
 import { Form, FormItemProps, message, Upload, UploadProps } from 'antd';
 import { RcFile } from 'antd/lib/upload';
-import { useState } from 'react';
+import { ReactNode, useState } from 'react';
 import { Controller, UseFormReturn } from 'react-hook-form';
 
 interface CSVUploadFieldProps extends UploadProps {
   name: string;
-  label: string;
+  label: ReactNode;
   customHelp?: string;
   formHook: UseFormReturn;
   formItemProps?: FormItemProps;

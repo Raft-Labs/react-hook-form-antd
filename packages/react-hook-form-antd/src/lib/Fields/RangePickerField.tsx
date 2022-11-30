@@ -4,12 +4,13 @@ import {
   RangePickerProps,
 } from 'antd/lib/date-picker/generatePicker';
 import dayjs, { Dayjs } from 'dayjs';
+import { ReactNode } from 'react';
 import { Controller, UseFormReturn } from 'react-hook-form';
 
 type RangePickerFieldProps = PickerProps<Dayjs> &
   RangePickerProps<Dayjs> & {
     name: string;
-    label: string;
+    label: ReactNode;
     customHelp?: string;
     formHook: UseFormReturn;
     formItemProps?: FormItemProps;

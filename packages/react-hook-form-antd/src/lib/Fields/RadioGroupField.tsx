@@ -1,9 +1,10 @@
 import { Form, FormItemProps, Radio, RadioGroupProps } from 'antd';
+import { ReactNode } from 'react';
 import { Controller, UseFormReturn } from 'react-hook-form';
 
 interface RadioGroupFieldProps extends RadioGroupProps {
   name: string;
-  label: string;
+  label: ReactNode;
   customHelp?: string;
   formHook: UseFormReturn;
   formItemProps?: FormItemProps;

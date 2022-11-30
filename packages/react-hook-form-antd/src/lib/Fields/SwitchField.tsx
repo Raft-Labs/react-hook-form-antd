@@ -1,9 +1,10 @@
 import { Form, FormItemProps, Switch, SwitchProps } from 'antd';
+import { ReactNode } from 'react';
 import { Controller, UseFormReturn } from 'react-hook-form';
 
 interface SwitchFieldProps extends SwitchProps {
   name: string;
-  label: string;
+  label: ReactNode;
   customHelp?: string;
   formHook: UseFormReturn;
   formItemProps?: FormItemProps;

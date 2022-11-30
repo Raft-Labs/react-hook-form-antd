@@ -1,10 +1,10 @@
 import { Form, FormItemProps, Input, InputProps, InputRef } from 'antd';
-import { Ref } from 'react';
+import { ReactNode, Ref } from 'react';
 import { Controller, UseFormReturn } from 'react-hook-form';
 
 interface InputFieldProps extends InputProps {
   name: string;
-  label: string;
+  label: ReactNode;
   customHelp?: string;
   formHook: UseFormReturn;
   formItemProps?: FormItemProps;

@@ -1,11 +1,12 @@
 import { DatePicker, Form, FormItemProps } from 'antd';
 import { PickerProps } from 'antd/lib/date-picker/generatePicker';
 import dayjs, { Dayjs } from 'dayjs';
+import { ReactNode } from 'react';
 import { Controller, UseFormReturn } from 'react-hook-form';
 
 type DatePickerFieldProps = PickerProps<Dayjs> & {
   name: string;
-  label: string;
+  label: ReactNode;
   customHelp?: string;
   formHook: UseFormReturn;
   formItemProps?: FormItemProps;

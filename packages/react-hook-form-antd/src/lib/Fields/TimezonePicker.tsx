@@ -1,10 +1,11 @@
 import { Form, FormItemProps, Select, SelectProps } from 'antd';
+import { ReactNode } from 'react';
 import { Controller, UseFormReturn } from 'react-hook-form';
 import { timezones } from '../../utils/timezones';
 
 interface TimezonePickerProps extends SelectProps {
   name: string;
-  label: string | JSX.Element;
+  label: ReactNode;
   customHelp?: string;
   formHook: UseFormReturn;
   formItemProps?: FormItemProps;

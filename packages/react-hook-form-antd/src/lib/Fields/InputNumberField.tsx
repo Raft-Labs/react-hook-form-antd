@@ -1,8 +1,9 @@
 import { Form, FormItemProps, InputNumber, InputNumberProps } from 'antd';
+import { ReactNode } from 'react';
 import { Controller, UseFormReturn } from 'react-hook-form';
 interface InputNumberFieldProps extends InputNumberProps {
   name: string;
-  label: string;
+  label: ReactNode;
   customHelp?: string;
   formHook: UseFormReturn;
   formItemProps?: FormItemProps;

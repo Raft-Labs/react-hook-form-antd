@@ -1,8 +1,9 @@
 import { AutoComplete, AutoCompleteProps, Form, FormItemProps } from 'antd';
+import { ReactNode } from 'react';
 import { Controller, UseFormReturn } from 'react-hook-form';
 interface AutoCompleteFieldProps extends AutoCompleteProps {
   name: string;
-  label: string;
+  label: ReactNode;
   customHelp?: string;
   formHook: UseFormReturn;
   formItemProps?: FormItemProps;

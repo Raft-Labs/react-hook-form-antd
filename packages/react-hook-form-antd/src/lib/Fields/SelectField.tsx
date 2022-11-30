@@ -1,10 +1,10 @@
 import { Form, FormItemProps, Select, SelectProps } from 'antd';
-import React from 'react';
+import { ReactNode } from 'react';
 import { Controller, UseFormReturn } from 'react-hook-form';
 
 interface SelectFieldProps extends SelectProps {
   name: string;
-  label: string | JSX.Element;
+  label: ReactNode;
   customHelp?: string;
   formHook: UseFormReturn;
   formItemProps?: FormItemProps;
