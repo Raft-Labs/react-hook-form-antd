@@ -1,5 +1,13 @@
 # Changelog
 
+<a name="1.0.8"></a>
+## 1.0.8 (2022-11-30)
+
+### Fixed
+
+- 🐛 fix(package): fixed onSubmit Type issue [[26ec0cf](https://github.com/Raft-Labs/react-hook-form-antd/commit/26ec0cf6342874d5f8698f2ae1381ff9cf01ca3f)]
+
+
 <a name="1.0.7"></a>
 ## 1.0.7 (2022-11-30)
 
