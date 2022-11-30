@@ -1,5 +1,13 @@
 # Changelog
 
+<a name="1.0.5"></a>
+## 1.0.5 (2022-11-30)
+
+### Added
+
+- ✨ feat(package): added image customization for  ImageUploader [[7b95d6f](https://github.com/Raft-Labs/react-hook-form-antd/commit/7b95d6f72dc5ac46ddc7c0fb8fe5626741570f76)]
+
+
 <a name="1.0.4"></a>
 ## 1.0.4 (2022-11-30)
 
