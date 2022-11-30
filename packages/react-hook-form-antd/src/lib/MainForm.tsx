@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Form, FormProps } from 'antd';
 import React from 'react';
 import { FormProvider, UseFormReturn } from 'react-hook-form';
 
 interface MainFormProps extends FormProps {
   formHook: UseFormReturn<any>;
-  onSubmit: (values: unknown) => void;
+  onSubmit: (values: any) => void;
   children: React.ReactNode;
 }
 

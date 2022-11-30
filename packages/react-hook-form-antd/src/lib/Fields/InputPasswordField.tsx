@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Form, FormItemProps, Input } from 'antd';
 import { PasswordProps } from 'antd/lib/input';
 import { ReactNode } from 'react';

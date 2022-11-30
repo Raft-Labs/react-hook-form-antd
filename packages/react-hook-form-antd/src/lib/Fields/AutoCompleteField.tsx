@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { AutoComplete, AutoCompleteProps, Form, FormItemProps } from 'antd';
 import { ReactNode } from 'react';
 import { Controller, UseFormReturn } from 'react-hook-form';

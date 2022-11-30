@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { DatePicker, Form, FormItemProps } from 'antd';
 import { PickerProps } from 'antd/lib/date-picker/generatePicker';
 import dayjs, { Dayjs } from 'dayjs';

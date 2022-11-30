@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Form, FormItemProps, Input, InputProps, InputRef } from 'antd';
 import { ReactNode, Ref } from 'react';
 import { Controller, UseFormReturn } from 'react-hook-form';

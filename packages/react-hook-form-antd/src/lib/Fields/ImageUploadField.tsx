@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons';
 import {
   Form,

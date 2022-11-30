@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Checkbox, CheckboxProps, Form, FormItemProps } from 'antd';
 import { Controller, UseFormReturn } from 'react-hook-form';
 

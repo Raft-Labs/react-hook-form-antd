@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { InboxOutlined, LoadingOutlined } from '@ant-design/icons';
 import { Form, FormItemProps, message, Upload, UploadProps } from 'antd';
 import { RcFile } from 'antd/lib/upload';
