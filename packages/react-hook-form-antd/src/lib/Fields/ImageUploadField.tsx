@@ -1,5 +1,13 @@
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons';
-import { Form, FormItemProps, Image, message, Upload, UploadProps } from 'antd';
+import {
+  Form,
+  FormItemProps,
+  Image,
+  ImageProps,
+  message,
+  Upload,
+  UploadProps,
+} from 'antd';
 import ImgCrop from 'antd-img-crop';
 import { RcFile } from 'antd/lib/upload';
 import { useState } from 'react';
@@ -15,6 +23,7 @@ interface ImageUploadFieldProps extends UploadProps {
   buttonLabel?: string;
   cropProps?: ImgCropProps;
   url?: string;
+  imageProps?: ImageProps;
 }
 const FormItem = Form.Item;
 
@@ -44,6 +53,7 @@ export const ImageUploadField = ({
   buttonLabel,
   cropProps,
   url,
+  imageProps,
   ...props
 }: ImageUploadFieldProps) => {
   const { control } = formHook;
@@ -90,9 +100,9 @@ export const ImageUploadField = ({
                 onRemove={() => onChange(undefined)}
               >
                 {url && !value ? (
-                  <Image width={120} preview={false} src={url} />
+                  <Image {...imageProps} src={url} />
                 ) : value ? (
-                  <Image width={120} preview={false} src={dataUri} />
+                  <Image {...imageProps} src={dataUri} />
                 ) : (
                   <div>
                     {loading ? <LoadingOutlined /> : <PlusOutlined />}
