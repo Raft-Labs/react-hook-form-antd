@@ -6,7 +6,7 @@ interface InputFieldProps extends InputProps {
   name: string;
   label: ReactNode;
   customHelp?: string;
-  formHook: UseFormReturn;
+  formHook: UseFormReturn<any>;
   formItemProps?: FormItemProps;
   ref?: Ref<InputRef>;
 }

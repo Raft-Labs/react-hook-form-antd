@@ -5,7 +5,7 @@ interface AutoCompleteFieldProps extends AutoCompleteProps {
   name: string;
   label: ReactNode;
   customHelp?: string;
-  formHook: UseFormReturn;
+  formHook: UseFormReturn<any>;
   formItemProps?: FormItemProps;
 }
 

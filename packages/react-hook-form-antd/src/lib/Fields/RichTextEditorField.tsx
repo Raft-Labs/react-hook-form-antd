@@ -49,7 +49,7 @@ const platePlugins = createPlugins(
 interface IRichTextEditorFieldProps extends PlateProps {
   name: string;
   label: ReactNode;
-  formHook: UseFormReturn;
+  formHook: UseFormReturn<any>;
   formItemProps?: FormItemProps;
   placeholder?: string;
   customHelp?: string;

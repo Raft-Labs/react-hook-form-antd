@@ -18,7 +18,7 @@ interface ImageUploadFieldProps extends UploadProps {
   name: string;
   label: ReactNode;
   customHelp?: string;
-  formHook: UseFormReturn;
+  formHook: UseFormReturn<any>;
   formItemProps?: FormItemProps;
   buttonLabel?: string;
   cropProps?: ImgCropProps;

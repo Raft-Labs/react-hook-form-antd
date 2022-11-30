@@ -3,7 +3,7 @@ import React from 'react';
 import { FormProvider, UseFormReturn } from 'react-hook-form';
 
 interface MainFormProps extends FormProps {
-  formHook: UseFormReturn;
+  formHook: UseFormReturn<any>;
   onSubmit: (values: unknown) => void;
   children: React.ReactNode;
 }

@@ -4,7 +4,7 @@ import { Controller, UseFormReturn } from 'react-hook-form';
 interface CheckboxFieldProps extends CheckboxProps {
   name: string;
   customHelp?: string;
-  formHook: UseFormReturn;
+  formHook: UseFormReturn<any>;
   formItemProps?: FormItemProps;
 }
 const FormItem = Form.Item;
