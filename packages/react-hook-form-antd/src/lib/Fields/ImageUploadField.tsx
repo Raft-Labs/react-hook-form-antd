@@ -4,31 +4,7 @@ import ImgCrop from 'antd-img-crop';
 import { RcFile } from 'antd/lib/upload';
 import { useState } from 'react';
 import { Controller, UseFormReturn } from 'react-hook-form';
-
-type ImgCropProps = {
-  aspect?: number;
-  shape?: 'rect' | 'round';
-  grid?: boolean;
-  quality?: number;
-  fillColor?: string;
-  zoom?: boolean;
-  rotate?: boolean;
-  minZoom?: number;
-  maxZoom?: number;
-  modalTitle?: string;
-  modalWidth?: number | string;
-  modalOk?: string;
-  modalCancel?: string;
-  modalMaskTransitionName?: string;
-  modalClassName?: string;
-  modalTransitionName?: string;
-  onModalOk?: (file: void | boolean | string | Blob | File) => void;
-  onModalCancel?: () => void;
-  beforeCrop?: (file: RcFile, fileList: RcFile[]) => boolean | Promise<boolean>;
-  onUploadFail?: (err: Error) => void;
-  // cropperProps?: Partial<CropperProps>;
-  // children: JSX.Element;
-};
+import { ImgCropProps } from '../../types/image-upload';
 
 interface ImageUploadFieldProps extends UploadProps {
   name: string;
@@ -36,7 +12,7 @@ interface ImageUploadFieldProps extends UploadProps {
   customHelp?: string;
   formHook: UseFormReturn;
   formItemProps?: FormItemProps;
-  buttonLabel: string;
+  buttonLabel?: string;
   cropProps?: ImgCropProps;
   url?: string;
 }
@@ -120,7 +96,9 @@ export const ImageUploadField = ({
                 ) : (
                   <div>
                     {loading ? <LoadingOutlined /> : <PlusOutlined />}
-                    <div style={{ marginTop: 8 }}>Upload</div>
+                    <div style={{ marginTop: 8 }}>
+                      {buttonLabel || 'Upload'}
+                    </div>
                   </div>
                 )}
               </Upload>
